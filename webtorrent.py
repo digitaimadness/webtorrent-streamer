@@ -1,11 +1,7 @@
 import pyperclip,subprocess,time,datetime,psutil,os,shutil,wx
 
 
-def main():
-    clipboard = pyperclip.paste()
-    if not 'magnet:' in clipboard:
-        clipboard = txtdialog()
-    magnet = clipboard.split('&')[0]
+def main(magnet):
     timestart = time.time()
     launch(magnet)
     seek = False
@@ -25,7 +21,7 @@ def main():
     else:
         timeleft = x-(time.time()-timestart)
     if timeleft>x*0.1 and dialog('restart? '+str(datetime.timedelta(seconds=timeleft))+' left to watch',''):
-        main()
+        main(magnet)
 
 
 def launch(magnet):
@@ -49,4 +45,7 @@ def dialog(header,message):
 
 if __name__ == '__main__':
     app = wx.App()
-    main()
+    clipboard = pyperclip.paste()
+    if not 'magnet:' in clipboard:
+        clipboard = txtdialog()
+    main(clipboard.split('&')[0])
