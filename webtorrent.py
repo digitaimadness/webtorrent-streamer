@@ -8,17 +8,17 @@ def startup():
     args = parser.parse_args()
     if args.magnet == 'null':
         if not 'magnet:' in pyperclip.paste(): #check clipboard if no argument was provided
-            launch(magnetdialog('insert magnet link').split('&')[0])  #prompt user
+            launch(magnetdialog('insert magnet link'))  #prompt user
         else:
-            launch(pyperclip.paste().split('&')[0])
+            launch(pyperclip.paste())
     elif 'magnet:' in args.magnet:
-        launch(args.magnet.split('&')[0])
+        launch(args.magnet)
 
 
 def launch(magnet):
     seekhappened = False
     timestart = time.time()
-    subprocess.call('webtorrent '+magnet+' --mpv',shell=True)
+    subprocess.call('webtorrent "'+magnet+'" --mpv',shell=True)
     with open(os.getenv('APPDATA')+r'\mpv\log') as mpvlogfile:
         mpvlog = mpvlogfile.readlines()
     for duration in mpvlog:
