@@ -25,7 +25,7 @@ def main():
     else:
         timeleft = x-(time.time()-timestart)
     if timeleft>x*0.1 and dialog('restart? '+str(datetime.timedelta(seconds=timeleft))+' left to watch',''):
-        launch(magnet)
+        main()
 
 
 def launch(magnet):
@@ -41,7 +41,7 @@ def txtdialog(parent=None, message='insert magnet link'):
 
 
 def dialog(header,message):
-    dlg = wx.MessageDialog(None,header,message,wx.YES_NO | wx.ICON_WARNING)
+    dlg = wx.MessageDialog(None,header,message,wx.YES_NO | wx.ICON_QUESTION)
     result = dlg.ShowModal()
     if result == wx.ID_YES:
         return True
