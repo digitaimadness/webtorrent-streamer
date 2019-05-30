@@ -6,7 +6,7 @@ Page directory
 Page instfiles
 Section ""
   SetOutPath $INSTDIR
-  File webtorrent.exe
+  File streamer.exe
   File mpv.exe
   File mpv.com
   File d3dcompiler_43.dll
