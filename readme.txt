@@ -1,5 +1,6 @@
 SETUP
-(1) download https://github.com/digitalmadness/webtorrent.streamer/releases/download/1.4.8.8/streamer.exe to C:\Program Files\webtorrent.streamer\
+(1) download https://github.com/digitalmadness/webtorrent.streamer/releases/download/1.4.8.8/streamer.exe
+    to C:\Program Files\webtorrent.streamer\
 (2) install https://nodejs.org/en/download/
 (3) run in cmd:
      npm install webtorrent-cli -g
