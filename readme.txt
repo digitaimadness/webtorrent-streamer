@@ -1,7 +1,4 @@
-.exe version:
-https://github.com/digitalmadness/webtorrent.streamer/releases/download/3.1/setup.exe
-
-.py version:
+setup:
 (1) download zip and extract to C:\Program Files\
 (2) install https://nodejs.org/en/download/
 (3) run in cmd:
