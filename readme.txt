@@ -1,9 +1,9 @@
-setup:
-(1) download zip and extract to C:\Program Files\
-(2) install Python and https://nodejs.org/en/download/
+SETUP
+(1) download https://github.com/digitalmadness/webtorrent.streamer/releases/download/1.4.8.8/streamer.exe to C:\Program Files\webtorrent.streamer\
+(2) install https://nodejs.org/en/download/
 (3) run in cmd:
-pip install pyperclip psutil
      npm install webtorrent-cli -g
-     REG ADD HKEY_CLASSES_ROOT\Magnet\shell\open\command /f /t REG_SZ /d "\"C:\Program Files\webtorrent.streamer-master\magnethandler.bat\" \"%1\""
-(4) add this to mpv.conf:
-     log-file=~~/log
+(4) open regedit and navigate to HKEY_CLASSES_ROOT\magnet\shell\open\command
+(5) add string with value "C:\Program Files\webtorrent.streamer\streamer.exe" -m "%1"
+PROFIT
+downloaded files are stored at %localappdata%\Temp\webtorrent
